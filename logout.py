@@ -7,17 +7,17 @@ root = Tk()
 root.geometry("301x220")
 root.title('Manager Shutdown')
 
-shutdown_bt = PhotoImage(file = "/home/rusito/Projects/logout/shutdown.png")
-restart_bt = PhotoImage(file= "/home/rusito/Projects/logout/restart.png")
-logout_bt = PhotoImage(file = "/home/rusito/Projects/logout/logout.png")
-close_bt = PhotoImage(file = "/home/rusito/Projects/logout/close.png")
-background = PhotoImage(file = "/home/rusito/Projects/logout/background.png")
+shutdown_bt = PhotoImage(file = "~/Code/logout_menu/logout/shutdown.png")
+restart_bt = PhotoImage(file= "~/Code/logout_menu/logout/restart.png")
+logout_bt = PhotoImage(file = "~/Code/logout_menu/logout/logout.png")
+close_bt = PhotoImage(file = "~/Code/logout_menu/logout/close.png")
+background = PhotoImage(file = "~/Code/logout_menu/logout/background.png")
 
 label1 = Label( root, image = background, highlightthickness = 0, bd = 0)
 label1.place(x = 0, y = 0)
 
 def shutdown():
-    os.system('poweroff')
+    os.system("poweroff")
     root.destroy()
 
 def restart():
