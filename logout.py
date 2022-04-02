@@ -1,23 +1,24 @@
 import os
 from tkinter import *
 import time
+import getpass
 
 root = Tk()
 
 root.geometry("301x220")
 root.title('Manager Shutdown')
 
-shutdown_bt = PhotoImage(file = "/home/rusito/Projects/logout/shutdown.png")
-restart_bt = PhotoImage(file= "/home/rusito/Projects/logout/restart.png")
-logout_bt = PhotoImage(file = "/home/rusito/Projects/logout/logout.png")
-close_bt = PhotoImage(file = "/home/rusito/Projects/logout/close.png")
-background = PhotoImage(file = "/home/rusito/Projects/logout/background.png")
+shutdown_bt = PhotoImage(file = "~/Code/logout_menu/logout/shutdown.png")
+restart_bt = PhotoImage(file= "~/Code/logout_menu/logout/restart.png")
+logout_bt = PhotoImage(file = "~/Code/logout_menu/logout/logout.png")
+close_bt = PhotoImage(file = "~/Code/logout_menu/logout/close.png")
+background = PhotoImage(file = "~/Code/logout_menu/logout/background.png")
 
 label1 = Label( root, image = background, highlightthickness = 0, bd = 0)
 label1.place(x = 0, y = 0)
 
 def shutdown():
-    os.system('poweroff')
+    os.system("poweroff")
     root.destroy()
 
 def restart():
@@ -28,7 +29,7 @@ def logout():
     myLabel3 = Label(root, text="Logout")
     myLabel3.pack()
     time.sleep(0)
-    os.system('i3-msg exit')
+    os.system(f"pkill -KILL -u {getpass.getuser()}")
 
 def x():
     root.destroy()
