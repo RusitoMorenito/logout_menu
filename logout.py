@@ -1,6 +1,7 @@
 import os
 from tkinter import *
 import time
+import getpass
 
 root = Tk()
 
@@ -28,7 +29,8 @@ def logout():
     myLabel3 = Label(root, text="Logout")
     myLabel3.pack()
     time.sleep(0)
-    os.system('i3-msg exit')
+    username = getpass.getuser()
+    os.system(f"pkill -KILL -u {username}")
 
 def x():
     root.destroy()
