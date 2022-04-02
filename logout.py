@@ -29,8 +29,7 @@ def logout():
     myLabel3 = Label(root, text="Logout")
     myLabel3.pack()
     time.sleep(0)
-    username = getpass.getuser()
-    os.system(f"pkill -KILL -u {username}")
+    os.system(f"pkill -KILL -u {getpass.getuser()}")
 
 def x():
     root.destroy()
