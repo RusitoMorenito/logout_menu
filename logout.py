@@ -5,15 +5,15 @@ import getpass
 
 root = Tk()
 
-root.geometry("301x300")
+root.geometry("301x290")
 root.title('Manager Shutdown')
 
-shutdown_bt = PhotoImage(file = "~/Code/logout_menu/logout/shutdown.png")
-restart_bt = PhotoImage(file= "~/Code/logout_menu/logout/restart.png")
-logout_bt = PhotoImage(file = "~/Code/logout_menu/logout/logout.png")
-lock_bt = PhotoImage(file = "~/Code/logout_menu/logout/lock.png")
-close_bt = PhotoImage(file = "~/Code/logout_menu/logout/close.png")
-background = PhotoImage(file = "~/Code/logout_menu/logout/background.png")
+shutdown_bt = PhotoImage(file = "~/Projects/git/logout_menu/logout/shutdown.png")
+restart_bt = PhotoImage(file= "~/Projects/git/logout_menu/logout/restart.png")
+logout_bt = PhotoImage(file = "~/Projects/git/logout_menu/logout/logout.png")
+lock_bt = PhotoImage(file = "~/Projects/git/logout_menu/logout/lock.png")
+close_bt = PhotoImage(file = "~/Projects/git/logout_menu/logout/close.png")
+background = PhotoImage(file = "~/Projects/git/logout_menu/logout/background.png")
 
 label1 = Label( root, image = background, highlightthickness = 0, bd = 0)
 label1.place(x = 0, y = 0)
@@ -33,7 +33,8 @@ def logout():
     os.system(f"pkill -KILL -u {getpass.getuser()}")
 
 def lock():
-    os.system("betterlockscreen --lock blur")
+    os.system("betterlockscreen --lock")
+    root.destroy()
 
 def x():
     root.destroy()
